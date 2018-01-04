@@ -1,0 +1,75 @@
+﻿{
+    "manifestVersion": 1,
+    "id": "vsts-utilities",
+    "name": "VSTS Release Management Utilities",
+    "version": "0.1.0",
+    "publisher": "sanjeev-agarwal",
+    "description": "VSTS Release Management Utilities",
+    "public": true,
+    "icons": {
+        "default": "images/Icon128.png",
+        "large": "images/Icon512.png"
+    },
+    "screenshots": [
+    	{
+      		"path": "images/screen1.png"
+    	}
+    ],
+    "categories": [
+        "Build and release"
+    ],
+    "tags": [
+        "utility",
+        "tasks"
+    ],
+    "links": {
+        "getstarted": {
+            "uri": "https://github.com/openalm/Extension-UtilitiesPack/blob/master/Utilites/overview.md"
+        },
+        "issues": {
+            "uri": "https://github.com/openalm/Extension-UtilitiesPack/issues"
+        },
+        "repository": {
+            "uri": "https://github.com/openalm/Extension-UtilitiesPack"
+        }
+	},
+    "branding": {
+        "color": "#f6f7fb",
+        "theme": "light"
+    },	
+    "content": {
+        "details": {
+            "path": "overview.md"
+        }
+    },
+    "files": [
+      {
+        "path": "CheckBuildCreatedFromXBranch"
+      },
+      {
+        "path": "images",
+        "addressable": true
+      }
+    ],
+    "scopes": [
+        "vso.build_execute",
+        "vso.serviceendpoint_manage"
+    ],
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "task-PSpp",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "CheckBuildCreatedFromXBranch"
+            }
+        }
+    ]
+}

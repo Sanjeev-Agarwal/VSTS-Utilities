@@ -1,0 +1,46 @@
+{
+  "id": "980b165c-b682-42a2-8b62-5412be687c0f",
+  "name": "CheckBuildCreatedFromXBranch",
+  "friendlyName": "Check build created from X branch",
+  "description": "Run a PowerShell script or Write your own",
+  "author": "sanjeev-agarwal",
+  "helpMarkDown": "[More Information](https://github.com/Sanjeev-Agarwal/VSTS-Utilities)",
+  "category": "Utility",
+  "visibility": [
+    "Release"
+  ],
+  "demands": [
+        "DotNetFramework"
+    ],
+  "version": {
+    "Major": "0",
+    "Minor": "2",
+    "Patch": "0"
+  },
+  "minimumAgentVersion": "1.83.0",
+  "instanceNameFormat": "Powershell",
+  "groups": [
+        {
+            "name":"advanced",
+            "displayName":"Advanced",
+            "isExpanded":false
+        }
+    ],
+  "inputs": [
+    { 
+        "name": "branchName", 
+        "type": "filePath", 
+        "label": "Branch Name", 
+        "defaultValue":"master", 
+        "required":true,
+        "helpMarkDown": "Branch to check before deploying code."
+     }
+  ],
+  "execution": {
+    "PowerShell": {
+      "target": "$(currentDirectory)\\task.ps1",
+      "argumentFormat": "",
+      "workingDirectory": "$(currentDirectory)"
+    }
+  }
+}
